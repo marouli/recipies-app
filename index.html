@@ -12,26 +12,34 @@
   </head>
   <body>
     <header>
-      <h1 class="logo">for foodies</h1>
-      <div class="search">
-        <form class="search" id="submit">
+      <h1 class="logo">foodies</h1>
+      <div class="searchWrap">
+        <form class="searchForm" id="submit">
           <input
+            class="searchTerm"
             type="text"
             id="search"
             placeholder="Search for meals or keywords"
           />
-          <button class="search-btn" type="submit">
+          <button class="searchButton" type="submit">
             <i class="fas fa-search"></i>
           </button>
         </form>
-        <!-- <button class="random-btn" id="random">
-          <i class="fas fa-random"></i>
-        </button> -->
+        <div class="randomSearchWrap">
+          <p>If you can't decide what to cook click here</p>
+          <button class="random-btn" id="random">
+            <i class="fas fa-random"></i>
+          </button>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="search-results"></section>
+      <section class="result">
+        <div id="result-heading"></div>
+        <div id="meals" class="meals"></div>
+        <div id="single-meal"></div>
+      </section>
     </main>
   </body>
 </html>
