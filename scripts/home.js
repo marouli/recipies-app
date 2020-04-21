@@ -25,10 +25,12 @@ const searchMeal = (e) => {
             .map(
               (meal) => `
           <div class="meal">
+              <a href="detail.html?meal=${meal.idMeal}" aria-label="detail">
               <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-              <div class="meal-info" id="${meal.idMeal}">
+              <div class="meal-info" data-mealid="${meal.idMeal}">
                 <h3>${meal.strMeal}</h3>
               </div>
+              </a>
             </div>
           `
             )
@@ -42,3 +44,18 @@ const searchMeal = (e) => {
 };
 
 submit.addEventListener('submit', searchMeal);
+
+mealsEl.addEventListener('click', (e) => {
+  const path = e.path || (e.composedPath && e.composedPath());
+  const mealInfo = path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains('meal-info');
+    } else {
+      return false;
+    }
+  });
+
+  if (mealInfo) {
+    const mealID = mealInfo.getAttribute('data-mealid');
+  }
+});

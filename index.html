@@ -7,12 +7,13 @@
       src="https://kit.fontawesome.com/4276a80c9a.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>foodies</title>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <title>bestfoodies</title>
   </head>
   <body>
     <header>
-      <h1 class="logo">foodies</h1>
+      <h1 class="logo"><a href="/">best foodies</a></h1>
       <div class="searchWrap">
         <form class="searchForm" id="submit">
           <input
@@ -20,14 +21,15 @@
             type="text"
             id="search"
             placeholder="Search for meals or keywords"
+            aria-label="Search"
           />
-          <button class="searchButton" type="submit">
+          <button class="searchButton" type="submit" aria-label="search">
             <i class="fas fa-search"></i>
           </button>
         </form>
         <div class="randomSearchWrap">
           <p>If you can't decide what to cook click here</p>
-          <button class="random-btn" id="random">
+          <button class="random-btn" id="random" aria-label="random">
             <i class="fas fa-random"></i>
           </button>
         </div>
@@ -35,13 +37,12 @@
     </header>
 
     <main>
-      <section class="result">
+      <section class="result" aria-label="meals">
         <div id="result-heading"></div>
         <div id="meals" class="meals"></div>
-        <div id="single-meal"></div>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="scripts/home.js"></script>
   </body>
 </html>

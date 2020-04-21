@@ -1,0 +1,54 @@
+header {
+  position: relative;
+  height: 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.logo a {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5rem;
+  color: var(--orange-color);
+}
+
+.single-meal {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.single-meal img {
+  width: 300px;
+  margin: 15px;
+  border: 4px #fff solid;
+  border-radius: 2px;
+}
+
+.single-meal-info {
+  margin: 20px;
+  padding: 10px;
+  border: 2px #f5ae68 dashed;
+  border-radius: 5px;
+}
+
+.single-meal p {
+  margin: 0;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+.single-meal ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.single-meal ul li {
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  color: #555;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 8px 8px 0;
+}
