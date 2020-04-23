@@ -45,6 +45,17 @@ const searchMeal = (e) => {
 
 submit.addEventListener('submit', searchMeal);
 
+random.addEventListener('click', () => {
+  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    .then((res) => res.json())
+    .then((data) => {
+      const meal = data.meals[0];
+      const mealID = meal.idMeal;
+
+      window.location = `detail.html?meal=${meal.idMeal}`;
+    });
+});
+
 mealsEl.addEventListener('click', (e) => {
   const path = e.path || (e.composedPath && e.composedPath());
   const mealInfo = path.find((item) => {

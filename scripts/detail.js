@@ -15,11 +15,13 @@ function addMealToDOM(meal) {
 
   single_mealEl.innerHTML = `
     <div class="single-meal">
-      <h2>${meal.strMeal}</h2>
-      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-      <div class="single-meal-info">
-        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
-        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
+      <div class="recipe-summary">
+        <h1>${meal.strMeal}</h1>
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+        <div class="single-meal-info">
+          ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
+          ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
+        </div>
       </div>
       <div class="main">
         <p>${meal.strInstructions}</p>
@@ -39,6 +41,8 @@ const getMealById = (id) => {
       const meal = data.meals[0];
 
       addMealToDOM(meal);
+
+      console.log(meal);
     });
 };
 
