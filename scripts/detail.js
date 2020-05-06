@@ -17,11 +17,11 @@ function addMealToDOM(meal) {
     <div class="single-meal">
       <div class="recipe-summary">
         <h1>${meal.strMeal}</h1>
-        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
         <div class="single-meal-info">
-          ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
-          ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
+        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
+        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
         </div>
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
       </div>
       <div class="main">
         <p>${meal.strInstructions}</p>

@@ -82,6 +82,7 @@ h1 {
 .randomSearchWrap {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 36px;
 }
 

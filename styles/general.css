@@ -19,6 +19,7 @@ html {
 }
 
 body,
+h1,
 p {
   margin: 0;
   font-family: 'Lato', sans-serif;
