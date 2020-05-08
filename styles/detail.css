@@ -1,23 +1,25 @@
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
   height: 80px;
   text-align: center;
-  border-bottom: 1px solid var(--light-color);
+  background-color: #fff;
+  border-bottom: 2px solid var(--light-color);
 }
 
 .logo {
-  margin-top: 20px;
   font-family: 'Satisfy', cursive;
   font-size: 2.5rem;
 }
 
 .logo a {
+  vertical-align: sub;
   color: var(--orange-color);
 }
 
 .single-meal {
   margin: 30px auto;
-  width: 50%;
+  width: 60%;
 }
 
 .recipe-summary {
@@ -27,52 +29,88 @@ header {
     'info info image'
     'detail detail image';
   grid-gap: 10px;
-  padding-bottom: 30px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--light-color);
+  padding: 50px 20px 30px 40px;
+  border-bottom: 2px solid var(--light-color);
 }
 
 .single-meal h1 {
   grid-area: title;
+  width: 80%;
   font-family: 'Lato', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--primary-dark-color);
 }
 
-.single-meal-info {
+.single-meal-info p {
   grid-area: info;
-  padding: 10px;
-  border: 2px #f5ae68 dashed;
-  border-radius: 5px;
+  width: 220px;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.single-meal a {
+  display: block;
+  width: 70%;
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  background-color: var(--light-green);
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.single-meal a:hover {
+  color: var(--primary-color);
+  box-shadow: 2px 2px 8px var(--shadow-color);
 }
 
 .single-meal img {
   grid-area: image;
-  width: 30vh;
-  align-self: flex-end;
+  width: 90%;
+  min-width: 200px;
+  height: auto;
+  justify-self: end;
   border-radius: 10px;
 }
 
-.single-meal p {
+.main p {
   margin: 0;
+  padding: 35px 20px;
+  font-size: 1.2rem;
   letter-spacing: 0.2px;
-  line-height: 1.4;
+  line-height: 1.8;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--light-color);
+  text-align: center;
+}
+
+.main h2 {
+  margin-top: 40px;
+  padding-left: 10px;
+  color: var(--dark-color);
 }
 
 .single-meal ul {
-  padding-left: 0;
+  padding-left: 8px;
   list-style-type: none;
 }
 
-.single-meal ul li {
-  border: 1px solid #ededed;
-  border-radius: 5px;
-  background-color: #fff;
+.single-meal ul li::before {
+  content: '\f138'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  font-size: 1rem;
   display: inline-block;
-  color: #555;
-  font-size: 12px;
-  font-weight: bold;
+  width: 1.3rem; /* same as padding-left set on li */
+  color: var(--light-green);
+}
+
+.single-meal ul li {
+  display: block;
+  color: var(--dark-color);
+  font-size: 1.2rem;
   padding: 4px 8px;
   margin: 0 8px 8px 0;
 }

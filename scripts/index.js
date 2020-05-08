@@ -2,6 +2,7 @@ const search = document.getElementById('search');
 const submit = document.getElementById('submit');
 const random = document.getElementById('random');
 const mealsEl = document.getElementById('meals');
+const mealList = document.getElementById('meal-lists');
 const resultHeading = document.getElementById('result-heading');
 const single_mealEl = document.getElementById('single-meal');
 
@@ -42,6 +43,27 @@ const searchMeal = (e) => {
     alert('Please enter a search value');
   }
 };
+
+const displayMealLists = () => {
+  fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      if (data.meals === null) {
+        mealList.innerHTML = '';
+      } else {
+        mealList.innerHTML = data.meals.map(
+          (meal) => `
+      <ul class="list-categories">
+        <li>${meal.strCategory}</li>
+      </ul>`
+        );
+      }
+    });
+};
+
+displayMealLists();
 
 submit.addEventListener('submit', searchMeal);
 

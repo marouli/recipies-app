@@ -18,8 +18,21 @@ function addMealToDOM(meal) {
       <div class="recipe-summary">
         <h1>${meal.strMeal}</h1>
         <div class="single-meal-info">
-        ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ''}
-        ${meal.strArea ? `<p>${meal.strArea}</p>` : ''}
+        ${
+          meal.strArea && meal.strCategory
+            ? `<p>${meal.strArea} - ${meal.strCategory}</p>`
+            : ''
+        }
+        ${
+          meal.strSource
+            ? `<a href=${meal.strSource} arial-label="Read Directions" target="_blank">Read Directions</a>`
+            : ''
+        }
+        ${
+          meal.strYoutube
+            ? `<a href=${meal.strYoutube} arial-label="Read Directions" target="_blank">Youtube Video</a>`
+            : ''
+        }
         </div>
         <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
       </div>
