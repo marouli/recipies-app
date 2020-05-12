@@ -2,7 +2,7 @@ const search = document.getElementById('search');
 const submit = document.getElementById('submit');
 const random = document.getElementById('random');
 const mealsEl = document.getElementById('meals');
-const mealList = document.getElementById('meal-lists');
+const mealCategoryList = document.getElementById('list-categories');
 const resultHeading = document.getElementById('result-heading');
 const single_mealEl = document.getElementById('single-meal');
 
@@ -15,7 +15,6 @@ const searchMeal = (e) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         resultHeading.innerHTML = `<h3>Search results for '${term}':</h3>`;
 
         if (data.meals === null) {
@@ -45,25 +44,54 @@ const searchMeal = (e) => {
 };
 
 const displayMealLists = () => {
-  fetch(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
+  fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
-      if (data.meals === null) {
-        mealList.innerHTML = '';
+      if (data.categories === null) {
+        mealCategoryList.innerHTML = '';
       } else {
-        mealList.innerHTML = data.meals.map(
-          (meal) => `
-      <ul class="list-categories">
-        <li>${meal.strCategory}</li>
-      </ul>`
-        );
+        mealCategoryList.innerHTML = data.categories
+          .map(
+            (meal) => `
+              <li class="category", gategoryId=${meal.strCategory}>${meal.strCategory}
+              <img src="${meal.strCategoryThumb}" alt="${meal.strMeal}" />
+              </li>`
+          )
+          .join('');
       }
     });
 };
 
 displayMealLists();
+
+const displayByCategory = (id) => {
+  fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      resultHeading.innerHTML = `<h3>Search results for '${id}':</h3>`;
+
+      if (data.meals === null) {
+        resultHeading.innerHTML = `<p>There are no search results. Try again!</p>`;
+        mealsEl.innerHTML = '';
+      } else {
+        mealsEl.innerHTML = data.meals
+          .map(
+            (meal) => `
+        <div class="meal">
+            <a href="detail.html?meal=${meal.idMeal}" aria-label="detail">
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+            <div class="meal-info" data-mealid="${meal.idMeal}">
+              <h3>${meal.strMeal}</h3>
+            </div>
+            </a>
+          </div>
+        `
+          )
+          .join('');
+      }
+    });
+};
 
 submit.addEventListener('submit', searchMeal);
 
@@ -90,5 +118,21 @@ mealsEl.addEventListener('click', (e) => {
 
   if (mealInfo) {
     const mealID = mealInfo.getAttribute('data-mealid');
+  }
+});
+
+document.getElementById('list-categories').addEventListener('click', (e) => {
+  const path = e.path || (e.composedPath && e.composedPath());
+  const categoryInfo = path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains('category');
+    } else {
+      return false;
+    }
+  });
+
+  if (categoryInfo) {
+    const categoryID = categoryInfo.getAttribute('gategoryId');
+    displayByCategory(categoryID);
   }
 });

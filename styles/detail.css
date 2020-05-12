@@ -56,14 +56,14 @@ header {
   margin-top: 20px;
   padding: 10px 0;
   text-align: center;
-  color: #fff;
+  color: var(--primary-dark-color);
   background-color: var(--light-green);
   border-radius: 20px;
   font-size: 1rem;
 }
 
 .single-meal a:hover {
-  color: var(--primary-color);
+  color: #fff;
   box-shadow: 2px 2px 8px var(--shadow-color);
 }
 
