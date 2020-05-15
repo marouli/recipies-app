@@ -68,9 +68,7 @@ const displayByCategory = (id) => {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       resultHeading.innerHTML = `<h3>Search results for '${id}':</h3>`;
-
       if (data.meals === null) {
         resultHeading.innerHTML = `<p>There are no search results. Try again!</p>`;
         mealsEl.innerHTML = '';
