@@ -1,0 +1,253 @@
+header {
+  position: relative;
+  height: 240px;
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px solid var(--light-color);
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.logo a {
+  font-family: 'Satisfy', cursive;
+  font-size: 4rem;
+  color: var(--orange-color);
+}
+
+.searchWrap {
+  margin-top: 40px;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.searchForm {
+  width: 100%;
+  position: relative;
+  display: flex;
+  box-shadow: 1px 1px 6px var(--shadow-color);
+  border-radius: 5px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 0;
+  border-right: none;
+  padding: 12px;
+  padding-left: 22px;
+  height: 46px;
+  border-radius: 5px;
+  outline: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.searchTerm:focus {
+  color: var(--dark-color);
+}
+
+.searchButton {
+  width: 55px;
+  height: 46px;
+  border: 0;
+  background: var(--light-green);
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.randomSearchWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  color: var(--dark-color);
+}
+
+.randomSearchWrap p {
+  margin: 0;
+  padding-right: 8px;
+  font-size: 15px;
+  color: var(--dark-color);
+}
+
+.random-btn {
+  height: 28px;
+  background-color: var(--orange-color);
+  color: #fff;
+  box-shadow: 1px 1px 6px var(--secondary-color);
+  font-size: 15px;
+}
+
+.random-btn:active {
+  transform: scale(0.9);
+}
+
+.list-categories {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-content: center;
+}
+
+.list-categories li {
+  width: 120px;
+  height: 120px;
+  margin: 14px;
+  padding: 8px 6px 0 6px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 1.3rem;
+  color: var(--primary-dark-color);
+  background-color: var(--light-green);
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 1px 1px 6px var(--shadow-color);
+}
+
+.list-categories li:hover {
+  color: #fff;
+  background-color: var(--dark-green);
+}
+
+.list-categories img {
+  display: block;
+  margin: auto;
+  margin-top: 4px;
+  width: 100px;
+}
+
+.result h3,
+p {
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  color: var(--orange-color);
+}
+
+.meals {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.meal {
+  margin: 16px;
+  cursor: pointer;
+  height: 280px;
+  width: 230px;
+  text-align: center;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px var(--light-color);
+}
+
+.meal:hover {
+  box-shadow: 1px 1px 18px var(--shadow-color);
+}
+
+.meal:hover .meal-info h3 {
+  color: var(--orange-color);
+}
+
+.meal:active {
+  transform: scale(0.99);
+}
+
+.meal img {
+  width: 85%;
+  margin-top: 16px;
+  border-radius: 5px;
+}
+
+.meal-info h3 {
+  position: relative;
+  height: 3rem; /* exactly three lines */
+  margin: 6px;
+  padding: 5px;
+  color: var(--primary-color);
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.meal-info h3:after {
+  content: '';
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 1400px) {
+  .list-categories {
+    width: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 200px;
+  }
+
+  h1 {
+    margin-top: 10px;
+  }
+
+  .logo a {
+    font-size: 3rem;
+  }
+
+  .searchWrap {
+    margin-top: 30px;
+    width: 90%;
+  }
+
+  .randomSearchWrap {
+    width: 70%;
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .randomSearchWrap p {
+    font-size: 14px;
+  }
+
+  .random-btn {
+    height: 28px;
+    background-color: var(--orange-color);
+    color: #fff;
+    box-shadow: 1px 1px 6px var(--secondary-color);
+    font-size: 15px;
+  }
+
+  .list-categories li {
+    margin: 8px;
+    width: 115px;
+    height: 45px;
+  }
+
+  .list-categories img {
+    display: none;
+  }
+}

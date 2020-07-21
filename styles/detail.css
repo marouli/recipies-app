@@ -1,0 +1,180 @@
+header {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 2px solid var(--light-color);
+}
+
+.logo {
+  font-family: 'Satisfy', cursive;
+  font-size: 2.5rem;
+}
+
+.logo a {
+  vertical-align: sub;
+  color: var(--orange-color);
+}
+
+.single-meal {
+  margin: 30px auto;
+  margin-bottom: 40px;
+  width: 65%;
+}
+
+.recipe-summary {
+  display: grid;
+  grid-template-areas:
+    'title title image'
+    'info info image'
+    'detail detail image';
+  grid-gap: 10px;
+  padding: 50px 20px 30px 40px;
+  border-bottom: 2px solid var(--light-color);
+}
+
+.single-meal h1 {
+  grid-area: title;
+  width: 80%;
+  font-family: 'Lato', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-dark-color);
+}
+
+.single-meal-info p {
+  grid-area: info;
+  width: 220px;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.single-meal a {
+  display: block;
+  width: 70%;
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  color: var(--primary-dark-color);
+  background-color: var(--light-green);
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.single-meal a:hover {
+  color: #fff;
+  box-shadow: 2px 2px 8px var(--shadow-color);
+}
+
+.single-meal img {
+  grid-area: image;
+  width: 90%;
+  min-width: 200px;
+  height: auto;
+  justify-self: end;
+  border-radius: 10px;
+}
+
+.main p {
+  margin: 0;
+  padding: 35px 20px;
+  font-size: 1.2rem;
+  letter-spacing: 0.2px;
+  line-height: 1.8;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--light-color);
+  text-align: center;
+}
+
+.main h2 {
+  margin-top: 40px;
+  padding-left: 10px;
+  color: var(--dark-color);
+}
+
+.single-meal {
+  border-bottom: 2px solid var(--light-color);
+}
+
+.single-meal ul {
+  margin-bottom: 40px;
+  padding-left: 8px;
+  list-style-type: none;
+}
+
+.single-meal ul li::before {
+  content: '\f138'; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  font-size: 1rem;
+  display: inline-block;
+  width: 1.3rem; /* same as padding-left set on li */
+  color: var(--light-green);
+}
+
+.single-meal ul li {
+  display: block;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  margin: 0 8px 8px 0;
+}
+
+.area-heading {
+  margin-left: 18%;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.area-meals {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.meal {
+  margin: 8px;
+  cursor: pointer;
+  height: 180px;
+  width: 150px;
+  text-align: center;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px var(--light-color);
+}
+
+.meal:hover {
+  box-shadow: 1px 1px 18px var(--shadow-color);
+}
+
+.meal:hover .meal-info h3 {
+  color: var(--orange-color);
+}
+
+.meal:active {
+  transform: scale(0.99);
+}
+
+.meal img {
+  width: 80%;
+  margin-top: 16px;
+  border-radius: 5px;
+}
+
+.meal-info h3 {
+  margin: 3px;
+  padding: 5px;
+  color: var(--primary-color);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

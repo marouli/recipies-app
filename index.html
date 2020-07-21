@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4276a80c9a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>bestfoodies</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo"><a href="/">best foodies</a></h1>
+      <div class="searchWrap">
+        <form class="searchForm" id="submit">
+          <input
+            class="searchTerm"
+            type="text"
+            id="search"
+            placeholder="Search for meals or keywords"
+            aria-label="Search"
+          />
+          <button class="searchButton" type="submit" aria-label="search">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <div class="randomSearchWrap">
+          <p>or if you can't decide what to cook click here</p>
+          <button class="random-btn" id="random" aria-label="random">
+            <i class="fas fa-random"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="meal-lists" aria-label="meals">
+        <ul id="list-categories" class="list-categories"></ul>
+        <!-- <ul class="list-area"></ul>
+        <ul class="list-ingredients"></ul> -->
+      </section>
+      <section class="result" aria-label="meals">
+        <div id="result-heading"></div>
+        <div id="meals" class="meals"></div>
+      </section>
+    </main>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
